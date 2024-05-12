@@ -5,47 +5,39 @@ class Stack {
   }
 
   canPush() {
-    if (this.stackControl.length < this.MAX_SIZE) { //why not if (this.stackControl < 0) or if (this.stackControl.length < 0)?
-      return true
-    } else {
-      return false
-    }
+    // ... your code goes here
+    return this.stackControl.length === this.MAX_SIZE ? false : true
   }
 
-
   isEmpty() {
-    if (this.stackControl.length <= 0) {
-      return true
-    } else {
-      return false
-    }
-
+    // ... your code goes here
+    return this.stackControl.length === 0 ? true : false
   }
 
   push(item) {
-
-    if (this.canPush()) {
+    // ... your code goes here
+    const veredict = this.canPush()
+    if (veredict) {
       this.stackControl.push(item)
       return this.stackControl
     } else {
-
-      throw new Error('STACK_OVERFLOW');
+      throw new Error('STACK_OVERFLOW')
     }
-
   }
 
   pop() {
-
-    if (!this.isEmpty()) {
-      const removedItem = this.stackControl.pop() //why? the elememt is not the method
-      return removedItem
-
+    // ... your code goes here
+    const veredict = this.isEmpty()
+    if (!veredict) {
+      const element = this.stackControl.pop()
+      return element
     } else {
-      throw new Error('STACK_UNDERFLOW');
+      throw new Error('STACK_UNDERFLOW')
     }
   }
 
   display() {
+    // ... your code goes here
     return this.stackControl
   }
 }
